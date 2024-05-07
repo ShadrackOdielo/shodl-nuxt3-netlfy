@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ $t('welcomeMessage') }}</h1>
+    <span class="font-bold text-xl md:text-2xl">{{ $t('welcomeMessage') }}</span>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ $t('name') }}.</h1>
     <div class="text-lg md:text-xl mb-8">
       {{ $t('introMessage') }}
-      <span class="font-bold text-xl md:text-2xl">{{ $t('name') }}</span>.
+     
     </div>
 
     <nuxt-link :to="localePath('about')" class="btn">{{ $t('moreAboutMe') }}</nuxt-link>
