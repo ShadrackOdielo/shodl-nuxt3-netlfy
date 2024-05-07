@@ -15,5 +15,9 @@
     "@nuxt/ui": "npm:@nuxt/ui-edge@latest",
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "nuxt": "^3.10.1"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0"
   }
 }

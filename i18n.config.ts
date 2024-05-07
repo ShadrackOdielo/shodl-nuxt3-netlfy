@@ -3,10 +3,18 @@ export default defineI18nConfig(() => ({
     locale: 'en',
     messages: {
       en: {
-        welcome: 'Welcome'
+        welcome: 'Welcome',
+        home: 'Home',
+        about: 'About',
+        writing: 'Writing',
+        projects: 'Projects'
       },
       fr: {
-        welcome: 'Bienvenue'
+        welcome: 'Bienvenue',
+        home: 'Accueil',
+        about: 'À propos',
+        projects: 'Projets',
+        writing: 'Écriture'
       }
     }
   }))
