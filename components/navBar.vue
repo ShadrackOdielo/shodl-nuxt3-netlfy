@@ -37,7 +37,7 @@
         </li>
         <li>
           <!-- Mobile menu button -->
-          <UButton @click="toggleMobileMenu" class="block md:hidden" color="white" variant="ghost">
+          <UButton @click="toggleMobileMenu" class="block md:block" color="white" variant="ghost">
             <IconsBurger class="w-6 h-6" />
             {{  isMobileMenuOpen ? $t('close') : $t('menu') }}
           </UButton>
@@ -45,7 +45,7 @@
       </ul>
       
       <!-- Dropdown menu (for smaller screens) -->
-      <ul v-if="isMobileMenuOpen" class="md:hidden">
+      <ul v-if="isMobileMenuOpen" class="md:block">
         <li>
           <NuxtLinkLocale to="about" class="hover:underline flex items-center"><IconsMan class="ml-1 w-5 h-5"/> {{ $t('about') }} </NuxtLinkLocale>
         </li>

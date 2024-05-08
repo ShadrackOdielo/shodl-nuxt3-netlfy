@@ -20,6 +20,12 @@ export default defineI18nConfig(() => ({
         readMore: 'Read More',
         latestProject: 'Latest Project',
         allProjects: 'All Projects',
+        aboutMe: "About Me",
+    student: "I am a student.",
+    startedCoding: "I started coding in high school.",
+    webDeveloper: "I am a web developer.",
+    trainedAt: "I was trained at ALX.",
+    loveBooksMusic: "I love books and music."
       },
       fr: {
         welcome: 'Bienvenue',
@@ -39,6 +45,12 @@ export default defineI18nConfig(() => ({
         readMore: 'Lire la suite',
         latestProject: 'Dernier Projet',
         allProjects: 'Tous les Projets',
+        aboutMe: "À propos de moi",
+      student: "Je suis étudiant.",
+    startedCoding: "J'ai commencé à coder au lycée.",
+    webDeveloper: "Je suis développeur web.",
+    trainedAt: "J'ai été formé à ALX.",
+    loveBooksMusic: "J'aime les livres et la musique."
       }
     }
   }))
