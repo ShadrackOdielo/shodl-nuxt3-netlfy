@@ -1,68 +1,74 @@
 <template>
-  <header class="header" :class="{ 'bg-transparent': isScrolled }">
-    <nav class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-      <div class="flex items-center space-x-4">
-        <NuxtLinkLocale to="/" class="mr-auto flex items-center space-x-2">
-          <UAvatar
-            v-if="isHomeRoute || isFrenchRoute"
-            size="sm"
-            src="/avatar.jpg"
-            alt="Avatar"
-          />
-          <span v-else class="aria-selected:true">shadrack odielo</span>
+  <header class="sticky top-0 z-40 flex-none mx-auto w-full bg-white md:bg-white/90 dark:bg-slate-950 dark:md:bg-slate-950/90 md:backdrop-blur-sm border-b dark:border-b-0">
+    <div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
+      <div class="home-icon flex justify-between">
+        <NuxtLinkLocale to="/"class="flex items-center" >
+          <span class="self-center ml-2 text-2xl font-extrabold text-gray-900 whitespace-nowrap dark:text-white flex-row">
+            <Img  v-if="isHomeRoute" src="/logo-lightmode.png" class="dark:hidden w-8 h-8" />
+            <img  v-if="isHomeRoute" src="/logo.png" class="hidden dark:flex w-8 h-8" />
+            <span v-if="!isHomeRoute"> {{ $t('name') }} </span>
+          </span>
         </NuxtLinkLocale>
-      </div>
 
-      <ul class="flex space-x-4 md:ml-0 md:space-x-4 md:flex-row md:flex-grow md:items-center md:flex-wrap md:justify-end" :class="{ 'hidden': isMobileMenuOpen }">
-        <li class="hidden md:block">
-          <NuxtLinkLocale to="about" class="hover:underline flex items-center"><IconsMan class="ml-1 w-5 h-5"/> {{ $t('about') }} </NuxtLinkLocale>
-        </li>
-        <li class="hidden md:block">
-          <NuxtLinkLocale to="projects" class="hover:underline flex items-center"><IconsTerminal class="ml-2 w-4 h-4"/> {{ t('projects') }}</NuxtLinkLocale>
-        </li>
-        <li class="hidden md:block">
-          <NuxtLinkLocale to="skills" class="hover:underline flex items-center"><IconsTools class="ml-2 w-4 h-4"/>  {{ t('skills') }}</NuxtLinkLocale>
-        </li>
-        <li class="hidden md:block">
-          <NuxtLinkLocale to="writing" class="hover:underline flex items-center"><IconsFeather class="ml-2 w-4 h-4"/>  {{ t('writing') }}</NuxtLinkLocale>
-        </li>
-        <li class="hidden md:block">
-          <NuxtLinkLocale to="contact" class="hover:underline flex items-center"><IconsMail class="ml-2 w-4 h-4"/>  {{ t('contact') }}</NuxtLinkLocale>
-        </li>
-        <li>
+        <div class="flex items-center md:hidden">
+          <!-- Toggle menu button for smaller devices -->
+        <button @click="isOpen = true" type="button"
+            class="ml-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition"
+          aria-label="Toggle Menu"
+          data-toggle-menu>
+          <IconsBurger class="w-5 h-5"  />
+        </button>
+        </div>
+      </div>
+    <nav
+    class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-screen md:h-auto"
+    aria-label="Main navigation"
+    id="menu"
+  >     
+         
+       
+			<ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
+          <NuxtLinkLocale to="about" class="hover:underline "><IconsMan class="ml-1 w-5 h-5"/> {{ $t('about') }} </NuxtLinkLocale>
+          <NuxtLinkLocale to="projects" class="hover:font-bold "><IconsTerminal class="ml-2 w-4 h-4"/> {{ t('projects') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="skills" class="hover:underline "><IconsTools class="ml-2 w-4 h-4"/>  {{ t('skills') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="writing" class="hover:underline "><IconsFeather class="md:flex ml-2 w-4 h-4"/>  {{ t('writing') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="contact" class="hover:underline "><IconsMail class="md:flex ml-2 w-4 h-4"/>  {{ t('contact') }}</NuxtLinkLocale>
           <LangToggle />
-        </li>
-        <li>
           <ColorModeToggle />
-        </li>
-        <li>
-          <!-- Mobile menu button -->
-          <UButton @click="toggleMobileMenu" class="block md:block" color="white" variant="ghost">
-            <IconsBurger class="w-6 h-6" />
-            {{  isMobileMenuOpen ? $t('close') : $t('menu') }}
-          </UButton>
-        </li>
       </ul>
+      <UPopover>
+        <UButton color="white" label="menu" trailing-icon="i-heroicons-chevron-down-20-solid" />
+    
+        <template #panel>
+          <div class="p-4">
+            <ul class="">
+              <li v-for="link in mainMenuLinks" :key="link.to">
+                <NuxtLinkLocale :to="link.to" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
+              </li>
+            </ul>
+          </div>
+        </template>
+      </UPopover>
       
-      <!-- Dropdown menu (for smaller screens) -->
-      <ul v-if="isMobileMenuOpen" class="md:block">
-        <li>
-          <NuxtLinkLocale to="about" class="hover:underline flex items-center"><IconsMan class="ml-1 w-5 h-5"/> {{ $t('about') }} </NuxtLinkLocale>
-        </li>
-        <li>
-          <NuxtLinkLocale to="projects" class="hover:underline flex items-center"><IconsTerminal class="ml-2 w-4 h-4"/> {{ t('projects') }}</NuxtLinkLocale>
-        </li>
-        <li>
-          <NuxtLinkLocale to="skills" class="hover:underline flex items-center"><IconsTools class="ml-2 w-4 h-4"/>  {{ t('skills') }}</NuxtLinkLocale>
-        </li>
-        <li>
-          <NuxtLinkLocale to="writing" class="hover:underline flex items-center"><IconsFeather class="ml-2 w-4 h-4"/>  {{ t('writing') }}</NuxtLinkLocale>
-        </li>
-        <li>
-          <NuxtLinkLocale to="contact" class="hover:underline flex items-center"><IconsMail class="ml-2 w-4 h-4"/>  {{ t('contact') }}</NuxtLinkLocale>
-        </li>
-      </ul>
+      <USlideover v-model="isOpen">
+        <div class="p-4 flex-1">
+          <ul class="">
+            <li v-for="link in mainMenuLinks" :key="link.to">
+              <NuxtLinkLocale :to="link.to" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
+            </li>
+          </ul>
+        </div>
+      </USlideover>
     </nav>
+
+    <!-- Mobile menu -->
+
+    <ul v-show="isMobileMenuOpen" class="md:hidden">
+      <li v-for="link in mainMenuLinks" :key="link.to">
+        <NuxtLinkLocale :to="link.to" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
+      </li>
+    </ul>
+    </div>
   </header>
 </template>
 
@@ -73,16 +79,33 @@ import { useI18n } from 'vue-i18n';
 
 const route = useRoute();
 const { t } = useI18n();
+// check if the current route is the home route every time the route changes and  reloads div home-icon
 
-const isHomeRoute = route.path === '/';
-const isFrenchRoute = route.path === '/fr';
+import { watch } from 'vue';
+const isHomeRoute = ref(route.path === '' || route.path === '/fr/' || route.path === '/fr' || route.path === '/');
+watch(() => {
+  isHomeRoute.value = route.path === '' || route.path === '/fr/' || route.path === '/fr' || route.path === '/';
+});
+
+
+
 const isMobileMenuOpen = ref(false);
 const isScrolled = ref(false);
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 };
+const mainMenuLinks = [
+  { to: '/', label: t('home'), icon: 'home-icon' },
+  { to: '/about', label: t('about'), icon: 'about-icon' },
+  { to: '/projects', label: t('projects'), icon: 'projects-icon' },
+  { to: '/skills', label: t('skills'), icon: 'skills-icon' },
+  { to: '/writing', label: t('writing'), icon: 'IconsMan' },
+  { to: '/contact', label: t('contact'), icon: 'i-heroicons-academic-cap' },
+];
 
+
+const isOpen = ref(false)
 // Handle scroll event
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
