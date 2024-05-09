@@ -14,7 +14,7 @@
 
       <div class="flex space-x-4">
         <a href="https://twitter.com/odielo_ke" target="_blank" class="text-gray-500 hover:text-blue-500"><IconsTwitter /></a>
-        <a href="https://www.linkedin.com/in/shadrack-odielo-" target="_blank" class="text-gray-500 hover:text-blue-500"><IconsLinkedin /></a>
+        <a href="https://www.linkedin.com/in/shadrack-odielo-30258a212/" target="_blank" class="text-gray-500 hover:text-blue-500"><IconsLinkedin /></a>
         <!-- Add links to other social media platforms -->
       </div>
     </div>

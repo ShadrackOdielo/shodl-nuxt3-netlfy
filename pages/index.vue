@@ -1,13 +1,13 @@
 <template>
   <div class="homepage-container bg-white dark:bg-gray-900">
-    <div class="text-container bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
+    <div class="text-container  bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
       <span class="font-bold text-xl md:text-2xl">{{ $t('welcomeMessage') }}</span>
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ $t('name') }}</h1>
-      <div class="text-lg md:text-xl mb-8">
+      <h1 class="animate-typing overflow-hidden text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ $t('name') }}</h1>
+      <div class="animate-typing overflow-hidden text-lg md:text-xl mb-8">
         {{ $t('introMessage') }}
       </div>
 
-      <nuxt-link :to="localePath('about')" class="btn">{{ $t('moreAboutMe') }}</nuxt-link>
+      <nuxt-link :to="localePath('about')" class="hover:underline">{{ $t('moreAboutMe') }}</nuxt-link>
     </div>
   </div>
 
