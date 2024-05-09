@@ -54,7 +54,7 @@
         <div class="p-4 flex-1">
           <ul class="">
             <li v-for="link in mainMenuLinks" :key="link.to">
-              <NuxtLinkLocale :to="link.to" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
+              <NuxtLinkLocale :to="link.to" @click="isOpen = false" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
             </li>
           </ul>
         </div>
@@ -104,8 +104,8 @@ const mainMenuLinks = [
   { to: '/contact', label: t('contact'), icon: 'i-heroicons-academic-cap' },
 ];
 
-
-const isOpen = ref(false)
+// make true if a link is clicked
+const isOpen = ref(false);
 // Handle scroll event
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
