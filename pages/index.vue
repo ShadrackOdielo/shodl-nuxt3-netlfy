@@ -23,20 +23,38 @@
       </div>
     </div>
 
-    <!-- Latest project card -->
-    <div class="my-8 placeholder bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
-      <h2 class="text-2xl font-bold mb-4">{{ $t('latestProject') }}</h2>
-      <div>
-        <h3 class="text-xl mb-2">Placeholder Project Title</h3>
-        <p>Placeholder Project Description</p>
-        <nuxt-link :to="localePath('projects')" class="text-blue-500 hover:underline">{{ $t('allProjects') }}</nuxt-link>
-      </div>
+     <!-- Latest project card -->
+  <div class="my-8 placeholder bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
+    <h2 class="text-2xl font-bold mb-4">{{ $t('latestProject') }}</h2>
+    <div v-if="latestProject">
+      <h3 class="text-xl mb-2">{{ latestProject.name }}</h3>
+      <p>{{ latestProject.description }}</p>
+      <nuxt-link :to="localePath('projects')" class="text-blue-500 hover:underline">{{ $t('allProjects') }}</nuxt-link>
     </div>
+  </div>
   </div>
 </template>
 
 <script setup>
 const { t } = useI18n();
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+
+const latestProject = ref(null);
+
+// Fetch latest project from GitHub
+const fetchLatestProject = async () => {
+  try {
+    const response = await axios.get('https://api.github.com/users/shadrackodielo/repos?sort=pushed');
+    if (response.data.length > 0) {
+      latestProject.value = response.data[0];
+    }
+  } catch (error) {
+    console.error('Error fetching latest project:', error);
+  }
+};
+
+onMounted(fetchLatestProject);
 </script>
 
 <style scoped>

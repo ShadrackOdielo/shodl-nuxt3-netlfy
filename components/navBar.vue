@@ -4,7 +4,7 @@
       <div class="home-icon flex justify-between">
         <NuxtLinkLocale to="/"class="flex items-center" >
           <span class="self-center ml-2 text-2xl font-extrabold text-gray-900 whitespace-nowrap dark:text-white flex-row">
-            <Img  v-if="isHomeRoute" src="/logo-lightmode.png" class="dark:hidden w-8 h-8" />
+            <img  v-if="isHomeRoute" src="/logo-lightmode.png" class="dark:hidden w-8 h-8" />
             <img  v-if="isHomeRoute" src="/logo.png" class="hidden dark:flex w-8 h-8" />
             <span v-if="!isHomeRoute"> {{ $t('name') }} </span>
           </span>
@@ -51,6 +51,7 @@
       </UPopover>
       
       <USlideover v-model="isOpen">
+        
         <div class="p-4 flex-1">
           <ul class="">
             <li v-for="link in mainMenuLinks" :key="link.to">

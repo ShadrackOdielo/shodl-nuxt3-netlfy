@@ -3,12 +3,12 @@
     <section v-for="(section, index) in sections" :key="index" class="mb-8">
       <h2 class="text-2xl font-bold mb-4">{{ section.title }}</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-90">
-        <div v-for="(skill, idx) in section.skills" :key="idx" :skill="card" @click="openModal" class="cursor-pointer p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105">
+        <div v-for="(skill, idx) in section.skills" :key="idx" :skill="skill" @click="openModal" class="cursor-pointer p-4 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105">
           <Icon :name="skill.icon" class="w-12 h-12 mx-auto mb-4 " />
           <p class="text-center">{{ skill.name }}</p>
         </div>
       </div>
-    </section>
+    </section> 
   </div>
 </template>
 
