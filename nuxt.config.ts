@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   },
   content: {
     // My custom configuration
+    markdown: {
+      remarkPlugins: ["remark-reading-time"],
+    },
   },
   i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default

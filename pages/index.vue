@@ -12,16 +12,59 @@
   </div>
 
   <!-- Placeholder for latest blog and project -->
-  <div class="placeholder-container bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 py-8">
-    <!-- Latest blog card -->
-    <div class="my-8 placeholder bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
-      <h2 class="text-2xl font-bold mb-4">{{ $t('latestBlog') }}</h2>
-      <div>
-        <h3 class="text-xl mb-2">Placeholder Blog Title</h3>
-        <p>Placeholder Blog Description</p>
-        <nuxt-link :to="localePath('articles')" class="text-blue-500 hover:underline">{{ $t('readMore') }}</nuxt-link>
-      </div>
+ 
+  <div
+  class="flex border-dashed border-t border-[#c7c7c7] dark:border-[#34343a] pt-10 flex-col"
+>
+  <h1 class="title mb-6">Latest posts:</h1>
+  <div
+    class="border rounded-[12px] p-4 pb-0 border-[#c7c7c7] dark:border-[#34343a]"
+  >
+    <div class="grid grid-cols-1 gap-4">
+      <ContentList
+        path="/posts"
+        :query="{
+          only: [
+            '_path',
+            'title',
+            'description',
+            'publishDate',
+            'img',
+            'tags',
+            'readingTime',
+          ],
+          limit: 3,
+          sort: { date: -1 },
+          $sensitivity: 'base',
+        }"
+      >
+        <template v-slot="{ list }">
+          <div
+            class="pb-4 flex border-b border-[#c7c7c7] dark:border-[#34343a] items-center"
+            v-for="article in list"
+            :key="article._path"
+          >
+            <HomeBlogPost :data="article" />
+          </div>
+        </template>
+        <template #not-found>
+          <p>No articles found.</p>
+        </template>
+      </ContentList>
     </div>
+
+    <a class="button-more-outlined" href="/">
+      <nuxt-link :to="localePath('writing')" class="text-blue-500 hover:underline">{{ $t('writing') }}</nuxt-link>
+      <div
+        class="mr-[11px] h-[36px] flex justify-center items-center bg-[#E8E8E8] w-[36px] rounded-full dark:bg-[#232425]"
+      >
+        <IconsRightArrow />
+      </div>
+      <div class="text-[14px]">See more posts</div>
+    </a>
+  </div>
+</div>
+
 
      <!-- Latest project card -->
   <div class="my-8 placeholder bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90">
