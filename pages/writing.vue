@@ -6,9 +6,7 @@
       Latest posts
     </h1>
     <p class="mb-5 font-recoleta">
-      I've been writing online since 2023, about web development, new
-      technologies, <br />useful tools and improving. I hope some of the
-      articles you will find useful for you :)
+      still under construction
     </p>
 
     <div class="flex items-center relative justify-between gap-4">

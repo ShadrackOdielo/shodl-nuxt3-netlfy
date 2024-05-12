@@ -22,7 +22,7 @@
   >
     <div class="grid grid-cols-1 gap-4">
       <ContentList
-        path="/posts"
+        path="/writing"
         :query="{
           only: [
             '_path',
@@ -74,7 +74,6 @@
       <p>{{ latestProject.description }}</p>
       <nuxt-link :to="localePath('projects')" class="text-blue-500 hover:underline">{{ $t('allProjects') }}</nuxt-link>
     </div>
-  </div>
   </div>
 </template>
 

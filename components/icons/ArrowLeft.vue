@@ -6,7 +6,7 @@
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
-      d="m7 11l5-5m0 0l5 5m-5-5v12"
+      d="m11 17l-5-5m0 0l5-5m-5 5h12"
     ></path>
   </svg>
 </template>
