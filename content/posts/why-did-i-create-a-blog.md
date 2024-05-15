@@ -1,48 +1,40 @@
 ---
 title: Why did I create the blog?
 description: Short story about me, my way as a developer and decision of creating the blog.
-publishDate: Junuary 01, 2023
+publishDate: may 14, 2024
 date: 2023-01-01
 img: "/avatar"
 tags: ["blog"]
 ---
 
 ::Disclaimer
-Probably this story may be seemed as a piece of shit but I don't give a shit to it :)
-<br/>(I'm not good at writing blogs and I'm not even good at English)
+This blog post represents my personal opinions and experiences. The information provided may not be accurate or up-to-date. Readers are advised to do their own research and verify any information before making decisions based on it. The views expressed in this blog post are solely my own and do not reflect the views of any organization or employer. Use the information provided at your own risk.
 ::
 
-## Short story about me
+# Why did I Start this Blog?
 
-Welcome to my blog! I think for the first blog post in my life it would be nice to introduce myself however I'm a shy person however I have to :)
+## Introduction to My Journey
 
-I'm Dmytro a guy from Ukraine who has been programming for 7 years, I'm a self-taught passionate programmer and former marathon runner. Last 5 years I worked on freelance as a frontend developer, eventually I used to create only simple projects where you only need to know a little bit of Vanilla JS, HTML, CSS.
+Hey there! I'm Shadrack Omondi Odielo, and I'm excited to welcome you to my blog. It feels a bit strange to write this first post, as I tend to be a bit reserved, but I'm pushing myself out of my comfort zone.
 
-It seems to me that I have stucked as a developer for 5 years and now I decided to curb web development with the best technologies, tools, and libraries.
+I've been deeply involved in the world of computing and IT for several years now. As a campus student, I've been immersing myself in programming, constantly seeking to refine my skills and broaden my knowledge.
 
-## War in Ukraine
+## My Path as a Developer
 
-On 24th February 2022, all Ukrainians were waked up by Russian missiles and bombs since this day everything changed for good.
+My journey started with a spark of curiosity, and over time, it's evolved into a passionate pursuit. Much like Dmytro from the original post, I'm a self-taught enthusiast, always eager to dive into new challenges. While my focus might differ slightly, the essence of the developer's journey resonates with me deeply.
 
-The most stresful and tragedic moment in one's life
+## Personal Challenges and Growth
 
-The most impressive phrase that I've heard in my life, There are many phrases that have been said but this one is my favourite
+While my journey as a developer has been fulfilling, it hasn't been without its hurdles. Like many others, I've faced my share of obstacles and setbacks. However, each challenge has served as an opportunity for growth, pushing me to strive for excellence.
 
-> “Russian terrotists do not have suck missles that could fall into ukranians desire to live.” © President Volodymyr Zelensky
+## Why Now?
 
-## Why am I Blogging?
+The decision to create this blog stems from a desire to take my journey to the next level. Just as Dmytro sought to elevate his skills and embrace new technologies, I'm driven by a similar ambition. I want to delve deeper into the world of programming, exploring the latest tools, frameworks, and libraries.
 
-There are several reasons to start blogging like:
+## Finding Purpose in Expression
 
-- I hope my articles will be useful for some people, I will work hard to make my articles useful.
-- Through this blog, I hope to inspire others by sharing my journey and help them find their own unique voice.
-- It will help me to improve my English, I have been studying English for 3 years but I lack english practice.
-- I wanted to use these stories as a way of expressing myself.
-- Writing a blog will allow me to explore different web development technologies (frameworks, libraries, tools) thus I will enhance my development skills.
-- Probably it can help to get a job or work in a team with great ideas :)
+Beyond the technical aspects, this blog serves as a platform for self-expression. Through writing, I hope to share my experiences, insights, and reflections with others. By documenting my journey, I aim to inspire and connect with fellow developers on a personal level.
 
-## What I'm going to blog about
+## What to Expect
 
-I know that The Internet is filled with unlimited resources, and blogs already. Starting a blog is like a marathon not a sprint thus I won't give up even if I don't succeed :)
-
-I hope my posts will stand out, mainly I'm going to blog about my journey as a web developer, about what I know and I don't.
+As I embark on this blogging journey, I'm excited to explore a wide range of topics. From coding challenges to industry insights, I aim to provide valuable content that resonates with my audience. While the road ahead may be challenging, I'm committed to staying the course and sharing my progress along the way.

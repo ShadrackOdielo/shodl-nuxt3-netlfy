@@ -6,6 +6,10 @@ export default <Partial<Config>> {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        recoleta: ["Recoleta", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
       keyframes: {
         typing: {
           "0%": {
@@ -16,6 +20,8 @@ export default <Partial<Config>> {
             width: "100%"
           }
         },
+            colors: {},
+           
         blink: {
           "50%": {
             borderColor: "transparent"

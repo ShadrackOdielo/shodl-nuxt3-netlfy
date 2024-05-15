@@ -26,35 +26,7 @@ const copyLink = () =>
     window.location.href.replace(/([^#]*)#.+/, "$1")
   );
 
-useHead({
-  title: post.value?.title,
-  meta: [
-    {
-      name: "twitter:image",
-      content: `https://tihunov.com${post.value?.img}`,
-    },
-    {
-      name: "twitter:title",
-      content: post.value?.title,
-    },
-    {
-      name: "twitter:description",
-      content: post.value?.description,
-    },
-    {
-      name: "description",
-      content: post.value?.description,
-    },
-    {
-      name: "og:title",
-      content: post.value?.title,
-    },
-    {
-      name: "og:description",
-      content: post.value?.description,
-    },
-  ],
-});
+
 </script>
 
 <template>

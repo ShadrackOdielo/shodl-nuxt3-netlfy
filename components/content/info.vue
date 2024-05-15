@@ -40,9 +40,9 @@ const copyLink = () => {
           <div>
             <a
               class="text-[14px]"
-              href="https://twitter.com/tihunov"
+              href="https://twitter.com/odelo_ke"
               target="_blank"
-              >@tihunov</a
+              >@odielo_ke</a
             >
           </div>
         </div>
