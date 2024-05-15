@@ -46,6 +46,8 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
+    z-index: 99;
+
   }
   </style>
   

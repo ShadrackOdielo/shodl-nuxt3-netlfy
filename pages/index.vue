@@ -7,7 +7,7 @@
         {{ $t('introMessage') }}
       </div>
 
-      <nuxt-link :to="localePath('about')" class="hover:underline">{{ $t('moreAboutMe') }}</nuxt-link>
+      <nuxt-link :to="localePath('about')" class="hover:underline button-more-outline">{{ $t('moreAboutMe') }}</nuxt-link>
     </div>
   </div>
 
@@ -53,15 +53,15 @@
       </ContentList>
     </div>
 
-    <a class="button-more-outlined" href="/">
-      <nuxt-link :to="localePath('writing')" class="text-blue-500 hover:underline">{{ $t('writing') }}</nuxt-link>
+      
+      <nuxt-link :to="localePath('writing')" class="text-blue-500 hover:underline button-more-outline">
       <div
         class="mr-[11px] h-[36px] flex justify-center items-center bg-[#E8E8E8] w-[36px] rounded-full dark:bg-[#232425]"
       >
         <IconsRightArrow />
       </div>
-      <div class="text-[14px]">See more posts</div>
-    </a>
+      <div class="text-[14px]">{{ $t('readMore') }}s</div>
+    </nuxt-link>
   </div>
 </div>
 

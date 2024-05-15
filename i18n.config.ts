@@ -1,3 +1,5 @@
+import Search from "./components/icons/Search.vue";
+
 export default defineI18nConfig(() => ({
     legacy: false,
     locale: 'en',
@@ -23,6 +25,7 @@ export default defineI18nConfig(() => ({
         name: 'Shadrack Odielo',
         moreAboutMe: 'More about me',
         latestBlog: 'Latest Blog',
+        search: "Search...",
         readMore: 'Read More',
         latestProject: 'Latest Project',
         allProjects: 'All Projects',
@@ -46,6 +49,7 @@ export default defineI18nConfig(() => ({
             title: 'Écriture',
             description: 'Mes pensées sur divers sujets.'
         },
+        Search: "Rechercher ...",
         skills: 'Compétences',
         welcomeMessage: 'Bonjour, je suis',
         introMessage: 'Bienvenue sur mon site web.',

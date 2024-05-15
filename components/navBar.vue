@@ -28,7 +28,7 @@
          
        
 			<ul class="flex flex-col pt-8  md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
-          <NuxtLinkLocale to="about" class="hover:underline focus:text-black dark:focus:text-red-600 pr-2">{{ $t('about') }} </NuxtLinkLocale>
+          <NuxtLinkLocale to="about" class="hover:underline hover:text-black dark:hover:text-white pr-2">{{ $t('about') }} </NuxtLinkLocale>
           <NuxtLinkLocale to="projects" class="hover:font-bold pr-2"> {{ t('projects') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="skills" class="hover:underline pr-2 "> {{ t('skills') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="writing" class="hover:underline pr-2">  {{ t('writing') }}</NuxtLinkLocale>
@@ -36,28 +36,9 @@
           <LangToggle class="pr-2" />
           <ColorModeToggle class="pr-2"/>
       </ul>
-      <UPopover>
-        <UButton color="white" label="menu" trailing-icon="i-heroicons-chevron-down-20-solid" leading-icon="i-heroicons-bars-3"/>
-    
-        <template #panel>
-          <div class="p-4">
-            <!-- <ul class="">
-              <li v-for="link in mainMenuLinks" :key="link.to">
-                <NuxtLinkLocale :to="link.to" class="block py-2 px-4 hover:bg-gray-200">{{ link.label }}</NuxtLinkLocale>
-              </li>
-            </ul> -->
-            <ul class="flex flex-row pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
-              <NuxtLinkLocale to="about" class="hover:underline inline "><IconsMan class="ml-1 w-5 h-5"/> {{ $t('') }} </NuxtLinkLocale>
-              <NuxtLinkLocale to="projects" class="hover:font-bold flex-row"><IconsTerminal class="ml-2 w-4 h-4"/> {{ t('') }}</NuxtLinkLocale>
-              <NuxtLinkLocale to="skills" class="hover:underline flex-row"><IconsTools class="ml-2 w-4 h-4"/>  {{ t('skills') }}</NuxtLinkLocale>
-              <NuxtLinkLocale to="writing" class="hover:underline flex-row"><IconsFeather class="md:flex ml-2 w-4 h-4"/>  {{ t('') }}</NuxtLinkLocale>
-              <NuxtLinkLocale to="contact" class="hover:underline flex-row"><IconsMail class="md:flex ml-2 w-4 h-4"/>  {{ t('') }}</NuxtLinkLocale>
-              <LangToggle />
-              <ColorModeToggle />
-          </ul>
-          </div>
-        </template>
-      </UPopover>
+      <UButton color="white" @click="isOpen = true"  label="menu" trailing-icon="i-heroicons-chevron-down-20-solid" leading-icon="i-heroicons-bars-3"/>
+
+      
       
       <USlideover v-model="isOpen">
         
@@ -70,12 +51,12 @@
               <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1" @click="isOpen = false" />
             </div>
           </template>
-          <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
-            <NuxtLinkLocale to="about" @click="isOpen = false" class="hover:underline flex-row" label="button" leading-icon="i-heroicons-megaphone"> {{ $t('about') }} </NuxtLinkLocale>
-            <NuxtLinkLocale to="projects" @click="isOpen = false" class="hover:font-bold flex-row" icon="i-heroicons-code-bracket"> {{ t('projects') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="skills" @click="isOpen = false" class="hover:underline "  icon="i-heroicons-academic-cap">  {{ t('skills') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="writing" @click="isOpen = false" class="hover:underline " icon="i-game-icons-feather">  {{ t('writing') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="contact" @click="isOpen = false" class="hover:underline " icon="uil-envelope"> {{ t('contact') }}</NuxtLinkLocale>
+          <ul class="flex flex-col pt-8 md:pt-0md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
+            <NuxtLinkLocale to="about" @click="isOpen = false" class="hover:underline flex-col md:flex-row" label="button" leading-icon="i-heroicons-megaphone"><Icon class="space-x-4" name="heroicons:megaphone" />{{ $t('about') }} </NuxtLinkLocale>
+            <NuxtLinkLocale to="projects" @click="isOpen = false" class="hover:underline md:flex-row" icon="i-heroicons-code-bracket"> <Icon name="heroicons:code-bracket" class="space-x-4"/> {{ t('projects') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="skills" @click="isOpen = false" class="hover:underline "  icon="i-heroicons-academic-cap"> <Icon name="heroicons:academic-cap" class="space-x-4"/> {{ t('skills') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="writing" @click="isOpen = false" class="hover:underline " icon="i-game-icons-feather"> <Icon name="game-icons:feather" class="space-x-4"/> {{ t('writing') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="contact" @click="isOpen = false" class="hover:underline " icon="uil-envelope"> <Icon name="uil:envelope"/>  {{ t('contact') }}</NuxtLinkLocale>
            
         </ul>
         <!-- make everything in the footer centered -->
@@ -96,7 +77,7 @@
       </li>
     </ul>
     </div>
-    <ScrollToTop />
+    
   </header>
 </template>
 
@@ -111,7 +92,7 @@ const { t } = useI18n();
 
 import { watch } from 'vue';
 const isHomeRoute = ref(route.path === '' || route.path === '/fr/' || route.path === '/fr' || route.path === '/');
-watch(() => {
+watch(() => {}, () => {
   isHomeRoute.value = route.path === '' || route.path === '/fr/' || route.path === '/fr' || route.path === '/';
 });
 

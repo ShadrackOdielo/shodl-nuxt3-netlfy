@@ -22,7 +22,7 @@
         /> -->
         <UInput
           v-model="searchType"
-          placeholder="Search article please(⌘ + K)"
+          placeholder="{{$t('search') }}"
           color="white"
           leading-icon="i-heroicons-magnifying-glass"
           ref="searchTypeRef"
