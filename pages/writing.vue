@@ -1,23 +1,31 @@
 <template>
   <div
-    class="mb-10 mt-10 border-dashed border-b border-[#c7c7c7] pb-10 dark:border-[#34343a]"
+    class="mb-10 mt-10  border-dashed border-b border-[#c7c7c7] pb-10 pl-10 dark:border-[#34343a]"
+    
   >
     <h1 class="text-4xl sm:text-6xl mb-3 font-semibold font-recoleta">
-      Latest posts
+      {{$t("blog.title")}}
     </h1>
     <p class="mb-5 font-recoleta">
-      still under construction
+      {{ $t("blog.description") }}
     </p>
 
     <div class="flex items-center relative justify-between gap-4">
       <div class="relative">
-        <IconsSearch class="w-4 left-[8px] top-[12px] absolute" />
+        <!-- <IconsSearch class="w-4 left-[8px] top-[12px] absolute" />
         <input
           ref="searchTypeRef"
           type="text"
           placeholder="Search article (⌘ + K)"
           v-model="searchType"
           class="input-search"
+        /> -->
+        <UInput
+          v-model="searchType"
+          placeholder="Search article please(⌘ + K)"
+          color="white"
+          leading-icon="i-heroicons-magnifying-glass"
+          ref="searchTypeRef"
         />
       </div>
 
@@ -147,4 +155,8 @@ const { meta_k } = useMagicKeys();
 watch(meta_k, (v) => {
   if (v) searchTypeRef.value.focus();
 });
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
+
 </script>

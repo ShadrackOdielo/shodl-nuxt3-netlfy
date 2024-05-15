@@ -10,6 +10,12 @@ export default defineI18nConfig(() => ({
         contact: 'Contact',
         about: 'About',
         writing: 'Writing',
+        blog:{
+            title: 'Writing',
+            description: 'My thoughts on various topics.'
+        },
+  
+
         skills: 'skills',
         projects: 'Projects',
         welcomeMessage: 'Hi, I am',
@@ -36,6 +42,10 @@ export default defineI18nConfig(() => ({
         about: 'À propos',
         projects: 'Projets',
         writing: 'Écriture',
+        blog:{
+            title: 'Écriture',
+            description: 'Mes pensées sur divers sujets.'
+        },
         skills: 'Compétences',
         welcomeMessage: 'Bonjour, je suis',
         introMessage: 'Bienvenue sur mon site web.',

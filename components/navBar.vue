@@ -28,16 +28,16 @@
          
        
 			<ul class="flex flex-col pt-8  md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
-          <NuxtLinkLocale to="about" class="hover:underline pr-2">{{ $t('about') }} </NuxtLinkLocale>
+          <NuxtLinkLocale to="about" class="hover:underline focus:text-black dark:focus:text-red-600 pr-2">{{ $t('about') }} </NuxtLinkLocale>
           <NuxtLinkLocale to="projects" class="hover:font-bold pr-2"> {{ t('projects') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="skills" class="hover:underline pr-2 "> {{ t('skills') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="writing" class="hover:underline pr-2">  {{ t('writing') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="contact" class="hover:underline pr-2"> {{ t('contact') }}</NuxtLinkLocale>
-          <LangToggle />
-          <ColorModeToggle />
+          <LangToggle class="pr-2" />
+          <ColorModeToggle class="pr-2"/>
       </ul>
       <UPopover>
-        <UButton color="white" label="menu" trailing-icon="i-heroicons-chevron-down-20-solid" />
+        <UButton color="white" label="menu" trailing-icon="i-heroicons-chevron-down-20-solid" leading-icon="i-heroicons-bars-3"/>
     
         <template #panel>
           <div class="p-4">
@@ -71,11 +71,11 @@
             </div>
           </template>
           <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">        
-            <NuxtLinkLocale to="about" class="hover:underline flex-row" label="button" leading-icon="i-heroicons-megaphone"> {{ $t('about') }} </NuxtLinkLocale>
-            <NuxtLinkLocale to="projects" class="hover:font-bold flex-row" icon="i-heroicons-code-bracket"> {{ t('projects') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="skills" class="hover:underline " icon="i-heroicons-academic-cap">  {{ t('skills') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="writing" class="hover:underline " icon="i-game-icons-feather">  {{ t('writing') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="contact" class="hover:underline " icon="uil-envelope"> {{ t('contact') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="about" @click="isOpen = false" class="hover:underline flex-row" label="button" leading-icon="i-heroicons-megaphone"> {{ $t('about') }} </NuxtLinkLocale>
+            <NuxtLinkLocale to="projects" @click="isOpen = false" class="hover:font-bold flex-row" icon="i-heroicons-code-bracket"> {{ t('projects') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="skills" @click="isOpen = false" class="hover:underline "  icon="i-heroicons-academic-cap">  {{ t('skills') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="writing" @click="isOpen = false" class="hover:underline " icon="i-game-icons-feather">  {{ t('writing') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="contact" @click="isOpen = false" class="hover:underline " icon="uil-envelope"> {{ t('contact') }}</NuxtLinkLocale>
            
         </ul>
         <!-- make everything in the footer centered -->
